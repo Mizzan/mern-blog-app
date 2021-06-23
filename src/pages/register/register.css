@@ -1,0 +1,66 @@
+.register {
+  font-family: 'Josefin Sans', sans-serif;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      to bottom right,
+      rgba(78, 78, 78, 0.795),
+      rgba(179, 179, 179, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1550622824-928e5f246f81?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+h1 {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.registerForm {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.registerForm > label {
+  margin: 15px 0;
+  color: #fff;
+}
+
+.registerInput::placeholder,
+.registerButton,
+.registerButton {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.registerInput {
+  width: 300px;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.registerFormButton {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: rgb(201, 33, 3);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.registerLoginButton {
+  margin-top: 20px;
+  padding: 10px 8rem;
+  background-color: rgb(81, 241, 108);
+  text-decoration: none;
+}

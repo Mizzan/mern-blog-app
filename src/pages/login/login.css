@@ -1,0 +1,65 @@
+.login {
+  font-family: 'Josefin Sans', sans-serif;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      to bottom right,
+      rgba(78, 78, 78, 0.795),
+      rgba(179, 179, 179, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+h1 {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.loginForm {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.loginForm > label {
+  margin: 15px 0;
+  color: #fff;
+}
+
+.loginInput::placeholder,
+.loginButton,
+.registerButton {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.loginInput {
+  width: 300px;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.loginButton {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: rgb(81, 241, 108);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.registerButton {
+  padding: 10px 3.5rem;
+  background-color: rgb(201, 33, 3);
+  text-decoration: none;
+  color: #fff;
+}
