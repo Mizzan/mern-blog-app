@@ -1,42 +1,34 @@
+import { Link } from 'react-router-dom';
 import './post.css';
 
-export default function Post() {
+export default function Post({ post }) {
   return (
     <div className="post">
-      <img
-        className="postImg"
-        src="https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
-        alt="post pic"
-      />
+      {post.photo && (
+        <img
+          className="postImg"
+          src="https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+          alt="post pic"
+        />
+      )}
 
       <div className="postInfo">
         <div className="postCats">
-          <span className="postCat">Music</span>
-          <span className="postCat">Sports</span>
+          {post.categories.map((c) => (
+            <span className="postCat">{c.name}</span>
+          ))}
         </div>
-        <span className="postTitle">Lorem ipsum dolor sit amet.</span>
+
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <hr />
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
 
-      <p className="postDesc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad atque fugit
-        mollitia consectetur sed facere architecto minus, recusandae, autem
-        laudantium deleniti, nisi vitae minima inventore hic tenetur veniam
-        dolorum fuga! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Ad atque fugit mollitia consectetur sed facere architecto minus,
-        recusandae, autem laudantium deleniti, nisi vitae minima inventore hic
-        tenetur veniam dolorum fuga! Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Ad atque fugit mollitia consectetur sed facere
-        architecto minus, recusandae, autem laudantium deleniti, nisi vitae
-        minima inventore hic tenetur veniam dolorum fuga! Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Ad atque fugit mollitia consectetur
-        sed facere architecto minus, recusandae, autem laudantium deleniti, nisi
-        vitae minima inventore hic tenetur veniam dolorum fuga! Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Ad atque fugit mollitia
-        consectetur sed facere architecto minus, recusandae, autem laudantium
-        deleniti, nisi vitae minima inventore hic tenetur veniam dolorum fuga!
-      </p>
+      <p className="postDesc">{post.desc}</p>
     </div>
   );
 }
